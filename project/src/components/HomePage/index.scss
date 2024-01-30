@@ -1,0 +1,545 @@
+@import '../../colors.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    gap: 150px;
+    .scroll-up-button {
+        display: none;
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        bottom: 50px;
+        right: 50px;
+        z-index: 2;
+        font-size: 50px;
+        color: #fff;
+        background-color: $primary-color;
+        border: solid;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            background-color: rgba($primary-color, 0.8);
+        }
+        &.show-scroll {
+            display: block;
+        }
+    }
+    .hero-section {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        overflow: visible;
+        .hero-text-container {
+            flex: 1;
+            text-align: start;
+            span {
+                color: $primary-color;
+            }
+
+            .hero-button-container {
+                display: flex;
+                gap: 30px;
+                margin-top: 50px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+            }
+        }
+        .hero-img-container {
+            flex: 1;
+            position: relative;
+            .bg {
+                position: absolute;
+                z-index: -1;
+                width: 700px;
+                top: -150px;
+                right: -100px;
+            }
+            .car {
+                width: 700px;
+                position: relative;
+                left: -70px;
+            }
+        }
+    }
+
+    .calendar-section {
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .booking-container {
+            text-align: start;
+            padding: 50px;
+            width: 90%;
+            h5 {
+                font-size: 25px;
+            }
+            .message-container {
+                display: none;
+            }
+            form {
+                margin-top: 20px;
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 2rem;
+                    @media (max-width: 1000px) {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                
+                      @media (max-width: 630px) {
+                        grid-template-columns: 1fr;
+                    }
+                    [class^="box-form"] {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+
+                        
+                        label {
+                            font-size: 18px;
+                            font-weight: bold;
+                            text-wrap: nowrap;
+                        }
+                        input, select {
+                            margin-top: 10px;
+                            width: 100%; 
+                            height: 47px; 
+                            box-sizing: border-box; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pick-car-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .pick-car-title-container {
+            max-width: 500px;
+        }
+        .pick-car-vehicles-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            height: 500px;
+            .vehicle-buttons-container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                button {
+                    background-color: $super-light-gray;
+                    border: none;
+                    padding: 15px 35px;
+                    font-size: 17px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in;
+                    text-align: start;
+
+                    &:hover {
+                        background-color: $primary-color;
+                        color: #fff;
+                    }
+                    &:focus {
+                        background-color: $primary-color;
+                        color: #fff;
+                        outline: none;
+                    }
+                }
+            }
+            .vehicle-img-container {
+                width: 500px;
+                img {
+                    width: 100%;
+                }
+            }
+            .vehicle-characteristics-container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-evenly;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    height: 100%;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        padding: 15px 35px;
+                        text-wrap: nowrap;
+                        border: solid 2px $light-gray;
+                        border-bottom: none;
+
+                        span {
+                            font-weight: bold;
+                            padding-inline: 10px
+                        }
+                        &:nth-child(8) {
+                            border-bottom: solid 2px $light-gray;
+                        }
+                        &:nth-child(1) {
+                            justify-content: center;
+                            gap: 10px;
+                            font-size: 20px;
+                            background: $primary-color;
+                            color: #fff;
+                            span {
+                                font-size: 30px;
+                                padding: 0;
+                                color: #fff;
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+    }
+    .quick-rental-cards-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 150px;
+            
+            @media (max-width: 800px) {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .card {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 350px;
+                width: 100%;
+                img {
+                    min-height: 200px;
+                }
+            }
+        }
+    }
+
+    .banner-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .banner-text-container {
+            background-color: #2d2d2d;
+            color: #fff;
+            padding: 75px;
+            width: 100vw;
+
+            h2 {
+                font-weight: 400;
+                span {
+                    color: $primary-color;
+                }
+            }
+        }
+        .banner-img {
+            margin-top: 50px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .why-us-section {
+        display: flex;
+        align-items: start;
+        gap: 100px;
+        width: 70%;
+        text-align: left;
+        .why-us-text-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: start;
+    
+            button {
+                margin-top: 30px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+        .why-us-list {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            flex: 1;
+            .reason-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+    .testemonials-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        .testemonials-title-container {
+            max-width: 500px;
+        }
+        .testemonials-container {
+            display: flex;
+            justify-content: center;
+            text-align: start;
+            .testemonial-card {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                max-width: 500px;
+                padding: 30px;
+                box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+                position: relative;
+
+                .testemonial-text {
+                    p {
+                        color: #000;
+                        font-size: 20px;
+                    }
+                }
+                .author-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    .author-img-container {
+                        img {
+                            border-radius: 50%;
+                            height: 60px;
+                        }
+                    }
+                    .author-info  {
+                        h5 {
+                            margin: 0;
+                        }
+                        h6 {
+                            margin: 0;
+                        }
+                    }
+                }
+                .quotes {
+                    width: 100px;
+                    position: absolute;
+                    right: 30px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+    .faq-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .mini-cooper-bg {
+            z-index: -5;
+            position: absolute;
+            left: -70px;
+        }
+
+        .faqs-container {
+            max-width: 700px;
+            .faq-text-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+    
+            .faqs {
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.15);
+               
+                .question-and-answer-container {
+                    .question {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 25px;
+                        cursor: pointer;
+                        font-weight: bold;
+                        transition: all 0.3s;
+    
+                        &.active {
+                            background-color: $primary-color;
+                            box-shadow: 0px 10px 10px 0px rgba($primary-color, 0.3);
+                            color: #fff;
+                        }
+    
+                        svg {
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+    
+                            &.active-arrow {
+                                rotate: 180deg;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .answer {
+                        text-align: start;
+                        font-size: 16px;
+                        opacity: 0;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+                        padding-inline: 25px;
+                        &.show {
+                          max-height: 1000px;
+                          opacity: 1;
+                        }
+                    }
+                }
+                button {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .download-section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 100px;
+        margin-top: 100px;
+        width: 80%;
+        .download-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            max-width: 500px;
+            text-align: left;
+            .download-button-container {
+                display: flex;
+                gap: 20px;
+                button {
+                    background: transparent;
+                    padding: 0;
+                    border: none;
+                    cursor: pointer;    
+                    
+                }
+            }
+        }
+        .download-banner-container {
+            position: absolute;
+            right: -200px;
+            z-index: -1;
+           
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    main {
+        .why-us-section {
+            flex-direction: column;
+            align-items: center;
+            .why-us-text-container {
+                align-items: center;
+                text-align: center;
+            }
+        }
+        .pick-car-section {
+            margin-bottom: 700px;
+            .pick-car-vehicles-container {
+                flex-direction: column;
+                width: 100%;
+                .vehicle-buttons-container {
+                    width: 100%;
+                    gap: 10px;
+                    button {
+                        text-align: center;
+                    }
+                }
+                .vehicle-img-container {
+                    max-width: 100%;
+                }
+                .vehicle-characteristics-container {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .faq-section {
+        .mini-cooper-bg {
+            top: 130px;
+        }
+    }
+    .download-section {
+        justify-content: center;
+        width: 100%;
+        .download-text-container {
+            text-align: center !important;
+            align-items: center;
+            width: 100%;
+        }
+        .download-banner-container {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    main {
+        .hero-section {
+            flex-direction: column;            
+            .hero-img-container {
+                display: none;
+            }
+            .hero-text-container {
+                .hero-button-container {
+                    justify-content: center;
+                }
+            }
+        }
+  
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        .faq-section {
+            .mini-cooper-bg {
+                top: 230px;
+            }
+        }
+        .download-section {
+            .download-text-container {
+                .download-button-container {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

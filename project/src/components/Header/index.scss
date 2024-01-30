@@ -1,0 +1,126 @@
+@import '../../colors.scss';
+.white-bg {
+    background: #fff;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;  
+    justify-content: space-around;  
+    height: 80px;
+    position: fixed;
+    background-color: transparent;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    
+    .logo {
+        margin: 0 30px 0 20px;
+        display: flex;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-wrap: nowrap;
+        width: 80%;
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            a {
+                margin-inline: 5px;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.3s;
+                    color: $primary-color;
+                } 
+                &:focus {
+                    outline: #000;
+                    transition: all 0.3s;
+                    color: $primary-color;
+                } 
+            }
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    .burger-menu {
+        all: unset;
+        cursor: pointer;
+        margin-right: 30px;
+        display: none;
+
+        svg {
+            height: 30px;
+        }
+    }
+    .mobile-nav-bar {
+        display: flex;
+        padding-bottom: 200px;
+        align-items: center;
+        justify-content: space-evenly;
+        top: 0;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        z-index: 100;
+        height: 100vh;
+        width: 100vw;
+        left: -110%;
+        transition: left 0.5s ease-in;
+        &.show {
+            left: 0;
+        }
+        
+        .logo-cross-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 20px;
+    
+            .mobile-logo {
+                width: 150px;
+            }
+            svg {
+                height: 50px;
+            }
+        }
+    
+        .mobile-link {
+            color: #000 !important;
+            font-size: 21px;
+            border-top: solid 1px #fff;
+            width: 70%;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1030px) {
+    header {
+        justify-content: space-between;
+        .nav-container {
+            display: none;
+        }
+        .burger-menu {
+            display: block !important;
+        }   
+    }
+}
