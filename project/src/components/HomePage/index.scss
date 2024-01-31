@@ -138,11 +138,11 @@ main {
                 display: flex;
                 flex-direction: column;
                 height: 100%;
-                justify-content: space-between;
+                gap: 10px;
                 button {
                     background-color: $super-light-gray;
                     border: none;
-                    padding: 15px 35px;
+                    padding: 18px 35px;
                     font-size: 17px;
                     font-weight: bold;
                     cursor: pointer;

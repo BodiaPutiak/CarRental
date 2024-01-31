@@ -2,6 +2,7 @@ import './index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCarSide, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { usePopUp } from '../../context/PopUpContext';
   
 
 function BookCalendar(){
@@ -23,13 +24,14 @@ function BookCalendar(){
         'Gdańsk',
     ];
     
-    const [modal, setModal] = useState(false);
     const [carType, setCarType] = useState('');
     const [carImg, setCarImg] = useState('');
     const [pickUp, setPickUp] = useState('');
     const [dropOff, setDropOff] = useState('');
     const [pickTime, setPickTime] = useState('');
-    const [dropTime, setDropTime] = useState('')
+    const [dropTime, setDropTime] = useState('');
+
+    const { openPopUp, handleOpenPopUp } = usePopUp();
 
     const handleInputChange = (setter) => (e) => setter(e.target.value);
 
@@ -107,7 +109,7 @@ function BookCalendar(){
                             />
                         </div>
                         <div className="box-form__car-button">
-                            <button className='primary-button' onClick={handleSubmit}>Search</button>
+                            <button className='primary-button' onClick={handleOpenPopUp}>Search</button>
                         </div>
                     </div>
                 </form>

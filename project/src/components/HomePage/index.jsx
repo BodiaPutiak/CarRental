@@ -9,10 +9,12 @@ import Faq from './Faq';
 import Download from './Download';
 import PickCar from './PickCar';
 import ScrollUpButton from './ScrollUpButton';
+import Modulo from '../Modulo';
 
 function Home(){
     return (
         <main>
+            <Modulo />
             <ScrollUpButton />
             <Hero />
             <BookCalendar />
