@@ -24,26 +24,24 @@ function BookCalendar(){
         'Gdańsk',
     ];
     
-    const [carType, setCarType] = useState('');
-    const [carImg, setCarImg] = useState('');
-    const [pickUp, setPickUp] = useState('');
-    const [dropOff, setDropOff] = useState('');
-    const [pickTime, setPickTime] = useState('');
-    const [dropTime, setDropTime] = useState('');
-
-    const { openPopUp, handleOpenPopUp } = usePopUp();
+    const {
+        handleCar, 
+        openPopUp,      
+        setDropOff, 
+        setDropTime, 
+        setPickTime, 
+        setPickUp,
+        pickUp,
+        pickTime, 
+        carType,
+        dropOff,
+        dropTime,
+        handleOpenPopUp
+    } = usePopUp();
 
     const handleInputChange = (setter) => (e) => setter(e.target.value);
 
-    const handleCar = (e) => {
-        const carTypeValue = e.target.value;
-        setCarType(carTypeValue);
-        setCarImg(carTypeValue)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault(); 
-    };
+   
     return (
         <section className='calendar-section'>
             <div className="booking-container">
