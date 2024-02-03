@@ -1,12 +1,12 @@
 import './index.scss';
-import mainCar from '../../assets/img/main-car.png';
 import { usePopUp } from '../../context/PopUpContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faMultiply,
     faInfoCircle,
-    faLocationPin,
+    faMapLocationDot
 } from '@fortawesome/free-solid-svg-icons';
+import PersonalInfo from './PersonalInfo';
 
 function Modal(){
     const {
@@ -25,6 +25,7 @@ function Modal(){
         carImg,
         handleOpenPopUp
     } = usePopUp();
+
     return (
         <div className={`background-overlay ${openPopUp ? 'show' : ''}`}>
             <div className='pop-up'>
@@ -36,7 +37,7 @@ function Modal(){
                 </div>
                 <div className="sub-header">
                     <h3>
-                        <FontAwesomeIcon icon={faInfoCircle} color='#FF4C30'/>
+                        <FontAwesomeIcon icon={faInfoCircle} color='#FF4C30'/> &nbsp;
                         Upon completing this reservation enquiry, you will receive:
                     </h3>
                     <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
@@ -47,7 +48,7 @@ function Modal(){
                             Location & Date
                         </h3>
                         <div className="info-icon-container">
-                            <FontAwesomeIcon icon={faLocationPin} />
+                            <FontAwesomeIcon icon={faMapLocationDot} />
                             <div className="info-container">
                                 <p>Pick-Up Date & Time</p>
                                 <div className="info">
@@ -56,7 +57,7 @@ function Modal(){
                             </div>
                         </div>
                         <div className="info-icon-container">
-                            <FontAwesomeIcon icon={faLocationPin} />
+                            <FontAwesomeIcon icon={faMapLocationDot} />
                             <div className="info-container">
                                 <p>Drop-Off Date & Time</p>
                                 <div className="info">
@@ -65,7 +66,7 @@ function Modal(){
                             </div>
                         </div>
                         <div className="info-icon-container">
-                            <FontAwesomeIcon icon={faLocationPin} />
+                            <FontAwesomeIcon icon={faMapLocationDot} />
                             <div className="info-container">
                                 <p>Pick-Up Location</p>
                                 <div className="info">
@@ -74,7 +75,7 @@ function Modal(){
                             </div>
                         </div>
                         <div className="info-icon-container">
-                            <FontAwesomeIcon icon={faLocationPin} />
+                            <FontAwesomeIcon icon={faMapLocationDot} />
                             <div className="info-container">
                                 <p>Drop-Off Location</p>
                                 <div className="info">
@@ -88,12 +89,8 @@ function Modal(){
                         <img src={carImg} alt="" />
                     </div>
                 </div>
+                <PersonalInfo />
             </div>
-            {/* <p>{carType}</p>
-                    <p>{pickUp}</p>
-                    <p>{dropOff}</p>
-                    <p>{pickTime}</p>
-                    <p>{dropTime}</p> */} 
         </div> 
     )
 }

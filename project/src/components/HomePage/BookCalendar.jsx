@@ -1,6 +1,6 @@
 import './index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faCarSide, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faCarSide, faLocationDot, faMultiply } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { usePopUp } from '../../context/PopUpContext';
   
@@ -36,7 +36,9 @@ function BookCalendar(){
         carType,
         dropOff,
         dropTime,
-        handleOpenPopUp
+        handleOpenPopUp,
+        handleCloseError,
+        error,
     } = usePopUp();
 
     const handleInputChange = (setter) => (e) => setter(e.target.value);
@@ -46,8 +48,11 @@ function BookCalendar(){
         <section className='calendar-section'>
             <div className="booking-container">
                 <h5>Book a Car</h5>
-                <div className="message-container">
-                    Error
+                <div className={`message-container ${error ? 'show' : ''}`}>
+                    <div>{error}</div>
+                    <button onClick={handleCloseError}>
+                        <FontAwesomeIcon icon={faMultiply} color='black'/>
+                    </button>
                 </div>
                 <form>
                     <div className="grid-container">
