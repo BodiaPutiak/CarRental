@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 import MobileNavBar from './MobileNavBar';
 import Logo from '../../assets/img/logo.png';
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faMultiply,

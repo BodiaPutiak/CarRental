@@ -1,42 +1,42 @@
-import { Link as ScrollLink } from 'react-scroll';
+import {  NavLink } from 'react-router-dom';
 
 function MobileNavBar(props) {
     const linksData = [
         {
           id: 1,
           name: 'Home',
-          to: 'features', 
+          to: '/', 
         },
         {
           id: 2,
           name: 'About',
-          to: 'faq', 
+          to: '/about', 
         },
         {
           id: 3,
           name: 'Vehicle Models',
-          to: 'contact', 
+          to: '/models', 
         },
         {
             id: 4,
             name: 'Testemonials',
-            to: 'features', 
+            to: '/testemonials', 
           },
           {
             id: 5,
             name: 'Our Team',
-            to: 'faq', 
+            to: '/our-team', 
           },
           {
             id: 6,
             name: 'Contact',
-            to: 'contact', 
+            to: '/contact', 
           },
       ];
     return (
         <>
             {linksData.map((item) => (
-                <ScrollLink
+                <NavLink
                     className='mobile-link'
                     to={item.to}
                     spy={true}
@@ -46,7 +46,7 @@ function MobileNavBar(props) {
                     onClick={props.closeMobileNavBar}
                 >
                     {item.name}
-                </ScrollLink>
+                </NavLink>
             ))}
         </>
     )
