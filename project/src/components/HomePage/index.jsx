@@ -4,7 +4,7 @@ import BookCalendar from './BookCalendar';
 import QuickRentalCards from './QuickRentalCards';
 import Banner from './Banner';
 import WhyUs from './WhyUs';
-import Testemonials from './Testemonials';
+import Testemonial from './Testemonial';
 import Faq from './Faq';
 import Download from './Download';
 import PickCar from './PickCar';
@@ -22,7 +22,7 @@ function Home(){
             <PickCar />
             <Banner />
             <WhyUs />
-            <Testemonials />
+            <Testemonial />
             <Faq />
             <Download />
         </main>

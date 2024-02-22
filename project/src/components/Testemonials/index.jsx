@@ -1,5 +1,7 @@
 import './index.scss';
 import TopBanner from '../TopBanner';
+import Testemonial from '../HomePage/Testemonial';
+import BookingBanner from '../BookingBanner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faPhone
@@ -7,9 +9,12 @@ import {
 
 function Testemonials() {
     return (
-        <section className="testemonials-section">
+        <>
             <TopBanner header='Testemonials' />
-        </section>
+            <Testemonial />
+            <BookingBanner />
+        </>
+            
     )
 }
 
