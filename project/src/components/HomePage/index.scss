@@ -164,6 +164,7 @@ main {
                     cursor: pointer;
                     transition: all 0.2s ease-in;
                     text-align: start;
+                    color: #000;
 
                     &:hover {
                         background-color: $primary-color;
@@ -225,6 +226,9 @@ main {
                         }
                     }   
                 }
+            }
+            button {
+                margin-top: 20px;
             }
         }
     }
