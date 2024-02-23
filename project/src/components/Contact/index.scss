@@ -11,6 +11,9 @@
         gap: 50px;
         justify-content: center;
         width: 70%;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+        }
         .info-text-container {
             display: flex;
             flex-direction: column;
